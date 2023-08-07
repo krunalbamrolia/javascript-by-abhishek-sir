@@ -1,0 +1,361 @@
+<html> 	
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script>
+		function Form1_Validator(theForm) {
+			//name validation
+			var alertsay = "";
+			if (theForm.name.value == "") {
+				document.getElementById("nm").innerHTML = "* Enter Name";
+				theForm.name.focus();
+				return (false);
+			}
+			if (theForm.name.value.length < 5) {
+				document.getElementById("nm").innerHTML = "* Enter Minimum 5 Characters";
+				theForm.name.focus();
+				return (false);
+			}
+			if (theForm.name.value.length > 20) {
+				document.getElementById("nm").innerHTML = "* Enter Maximum 20 Characters";
+				theForm.name.focus();
+				return (false);
+			}
+			var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz' '";
+			var checkStr = theForm.name.value;
+			var allValid = true;
+			for (i = 0; i < checkStr.length; i++) {
+				ch = checkStr.charAt(i);
+				for (j = 0; j < checkOK.length; j++)
+					if (ch == checkOK.charAt(j))
+						break;
+				if (j == checkOK.length) {
+					allValid = false;
+					break;
+				}
+			}
+			if (!allValid) {
+				document.getElementById("nm").innerHTML = "* Enter Only Characters In Textbox";
+				theForm.name.focus();
+				return (false);
+			}
+
+
+			//address validation
+			if (theForm.address.value == "") {
+				document.getElementById("add").innerHTML = "*Enter Address";
+				theForm.address.focus();
+				return (false);
+			}
+
+			// allow only 150 characters maximum in the comment field
+			if (theForm.address.value.length > 150) {
+				document.getElementById("add").innerHTML = "* Enter Maximum 150 Characters";
+				theForm.address.focus();
+				return (false);
+			}
+
+			//Date Of Birth
+			if (theForm.dob.value == "") {
+				document.getElementById("dob").innerHTML = "* Enter Date";
+				theForm.dob.focus();
+				return (false);
+			}
+			var checkOK = "0123456789-";
+			var checkCON = "/^([0-9]{2})-([0-9]{2})-([0-9]{4})$/";
+			var checkStr = theForm.dob.value;
+			var allValid = true;
+			{
+				for (i = 0; i < checkStr.length; i++) {
+					ch = checkStr.charAt(i);
+					for (j = 0; j < checkOK.length; j++)
+						if (ch == checkOK.charAt(j))
+							break;
+					if (j == checkOK.length) {
+						allValid = false;
+						break;
+					}
+					if (allValid == checkCON) {
+						document.getElementById("dob").innerHTML = "* Enter Valid Birth-Date";
+						theForm.dob.focus();
+						return (false);
+					}
+
+				}
+			}
+			if (!allValid) {
+				document.getElementById("dob").innerHTML = "* Enter Valid Birth-Date";
+				theForm.dob.focus();
+				return (false);
+			}
+
+			// require at least one radio button be selected
+			var radioSelected = false;
+			for (i = 0; i < theForm.Gender.length; i++) {
+				if (theForm.Gender[i].checked)
+					radioSelected = true;
+			}
+			if (!radioSelected) {
+				document.getElementById("gender").innerHTML = "* Select Gender";
+				return (false);
+			}
+
+			// only allow 0-9, hyphen and comma be entered
+			if (theForm.phone.value == "") {
+				document.getElementById("phone").innerHTML = "* Enter Phone Number";
+				theForm.phone.focus();
+				return (false);
+			}
+			var checkOK = "0123456789";
+			var checkStr = theForm.phone.value;
+			var allValid = true;
+			var decPoints = 0;
+			var allNum = "";
+			{
+				for (i = 0; i < checkStr.length; i++) {
+					ch = checkStr.charAt(i);
+					for (j = 0; j < checkOK.length; j++)
+						if (ch == checkOK.charAt(j))
+							break;
+					if (j == checkOK.length) {
+						allValid = false;
+						break;
+					}
+
+				}
+				if (i != 10) {
+					document.getElementById("phone").innerHTML = "* Please Enter Valid Number";
+					theForm.phone.focus();
+					return (false);
+				}
+			}
+			if (!allValid) {
+				document.getElementById("phone").innerHTML = "* Please Enter Only Valid Mobile Number ";
+				theForm.phone.focus();
+				return (false);
+			}
+
+			//Selected State
+			if (theForm.state.selectedIndex <= 0) {
+				document.getElementById("state").innerHTML = "* Please Select State";
+				theForm.state.focus();
+				return (false);
+			}
+
+			//select City
+			if (theForm.city.selectedIndex <= 0) {
+				document.getElementById("city").innerHTML = "* Please Select City";
+				theForm.city.focus();
+				return (false);
+			}
+
+			// check if email field is blank
+			if (theForm.email.value == "") {
+				alert("Please enter a value for the \"Email\" field.");
+				theForm.email.focus();
+				return (false);
+			}
+
+			// test if valid email address, must have @ and .
+			var checkEmail = "@.";
+			var checkStr = theForm.email.value;
+			var EmailValid = false;
+			var EmailAt = false;
+			var EmailPeriod = false;
+			for (i = 0; i < checkStr.length; i++) {
+				ch = checkStr.charAt(i);
+				for (j = 0; j < checkEmail.length; j++) {
+					if (ch == checkEmail.charAt(j) && ch == "@")
+						EmailAt = true;
+					if (ch == checkEmail.charAt(j) && ch == ".")
+						EmailPeriod = true;
+					if (EmailAt && EmailPeriod)
+						break;
+					if (j == checkEmail.length)
+						break;
+				}
+				// if both the @ and . were in the string
+				if (EmailAt && EmailPeriod) {
+					EmailValid = true
+					break;
+				}
+			}
+			if (!EmailValid) {
+				alert("The \"email\" is not valid");
+				theForm.email.focus();
+				return (false);
+			}
+
+			// require at least 5 characters in the password field
+			if (theForm.password.value.length < 5) {
+				alert("Please enter at least 5 characters in the \"Password\" field.");
+				theForm.password.focus();
+				return (false);
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<div class="container">
+
+		<form class=" form-horizontal" action="" method="POST" onsubmit="return Form1_Validator(this)" name="Form1">
+
+
+			<h1>Registration form</h1>
+
+			<!-- name -->
+			<div class="form-group">
+				<label class="col-md-4 control-label">Name</label>
+				<div class="col-md-4 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+						<input name="name" placeholder="Name" class="form-control" type="text">
+					</div>
+				</div>
+				<span id="nm" style="color:red;"></span>
+			</div>
+
+			<!-- address -->
+			<div class="form-group">
+				<label class="col-md-4 control-label">Address</label>
+				<div class="col-md-4 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+						<textarea name="address" placeholder="Address" class="form-control" type="text"></textarea>
+					</div>
+				</div>
+				<span id="add" style="color:red;"></span>
+			</div>
+
+			<!-- date of birth -->
+			<div class="form-group">
+				<label class="col-md-4 control-label">Date of Birth</label>
+				<div class="col-md-4 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+						<input name="dob" type="date" class="form-control" />
+					</div>
+				</div>
+				<span id="dob" style="color:red;"></span>
+			</div>
+
+			<!-- gender -->
+			<div class="form-group ">
+				<label class="col-md-4 control-label ">Gender</label>
+				<div class="col-md-4 inputGroupContainer">
+					<div class="input-group">
+						<div class="radio radio-inline">
+							<label>
+								<input type="radio" name="Gender" /> Male
+							</label>
+						</div>
+						<div class="radio radio-inline">
+							<label>
+								<input type="radio" name="Gender" /> Female
+							</label>
+						</div>
+					</div>
+				</div>
+				<span id="gender" style="color:red;"></span>
+			</div>
+
+			<!-- phone number -->
+			<div class="form-group">
+				<label class="col-md-4 control-label">Phone #</label>
+				<div class="col-md-4 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+						<input name="phone" placeholder="91065*****" class="form-control" type="text">
+					</div>
+				</div>
+				<span id="phone" style="color:red;"></span>
+			</div>
+
+			<!-- state selaction -->
+			<div class="form-group">
+				<label class="col-md-4 control-label">State</label>
+				<div class="col-md-4 selectContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+						<select id="inputState" class="form-control" name="state">
+							<option selected="selected">Select your state</option>
+							<option>GUJARAT</option>
+							<option>DELHI</option>
+							<option>GOA</option>
+							<option>ANDAMAN &amp; NICOBAR ISLANDS</option>
+							<option>ANDHRA PRADESH</option>
+							<option>ARUNACHAL PRADESH</option>
+							<option>ASSAM</option>
+							<option>BIHAR</option>
+							<option>CHANDIGARH</option>
+							<option>CHHATTISGARH</option>
+							<option>DADRA &amp; NAGAR HAVELI</option>
+							<option>DAMAN &amp; DIU</option>
+						</select>
+					</div>
+				</div>
+				<span id="state" style="color:red;"></span>
+			</div>
+
+			<!-- city selection -->
+			<div class="form-group">
+				<label class="col-md-4 control-label">City</label>
+				<div class="col-md-4 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+						<select id="inputcity" class="form-control" name="city">
+							<option selected="selected">Select your city</option>
+							<option>AHMEDABAD</option>
+							<option>AMRELI</option>
+							<option>ANAND</option>
+							<option>RAJKOT</option>
+							<option>BHARUCH</option>
+							<option>BHAVNAGAR</option>
+							<option>JUNAGADH</option>
+							<option>SURAT</option>
+							<option>JAMNAGER</option>
+							<option>VADODARA</option>
+						</select>
+					</div>
+				</div>
+				<span id="city" style="color:red;"></span>
+			</div>
+
+			<!-- email -->
+			<div class="form-group">
+				<label class="col-md-4 control-label">E-Mail</label>
+				<div class="col-md-4 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+						<input name="email" placeholder="E-Mail Address" class="form-control" type="text">
+					</div>
+				</div>
+				<span id="email" style="color:red;"></span>
+			</div>
+
+			<!-- password -->
+			<div class="form-group">
+				<label class="col-md-4 control-label">password</label>
+				<div class="col-md-4 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+						<input name="password" placeholder="password" class="form-control" type="password">
+					</div>
+				</div>
+				<span id="pass" style="color:red;"></span>
+			</div>
+
+			<!-- button -->
+			<div class="form-group">
+				<label class="col-md-4 control-label"></label>
+				<div class="col-md-4">
+					<input type="reset" name="reset" value="rset">
+					<input type="submit" name="Submit" value="Subit">
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+
+</html>

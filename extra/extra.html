@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function swapping() {
+            // Get the input values
+            
+            var a = parseFloat(document.getElementById("a").value);
+            var b = parseFloat(prompt('enter any number of B  :'));
+            var temp;
+            // Perform the operations
+            var temp = a ;
+            a = b;
+            b = temp;
+
+            // Display the results
+            document.getElementById("a").textContent = "A: " + a;
+            document.write('Ans B : ' + b + '');
+
+        }
+        swapping()
+    </script>
+
+<h1>swapping</h1>
+
+<label for="a">You can enter A value:</label>
+<input type="number" id="a"><br>
+
+<!-- <label for="b">You can enter B value:</label>
+<input type="number" id="b"><br> -->
+
+<button onclick="swapping()">value swapp</button>
+
+<h2>Results:</h2>
+<p id="a"></p>
+</body>
+
+</html>

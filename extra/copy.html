@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search Table by ID</title>
+</head>
+<body>
+  <input type="text" id="searchInput" placeholder="Enter ID">
+  <button onclick="searchTable()">Search</button>
+
+  <table id="dataTable">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>course</th>
+      <th>fees</th>
+    </tr>
+    <tr>
+      <td>3680</td>
+      <td>krunalbamrolia</td>
+      <td>fullstack</td>
+      <td>95000</td>
+    </tr>
+    <tr>
+      <td>1765</td>
+      <td>diveshkakadiya</td>
+      <td>Gim</td>
+      <td>12500</td>
+    </tr>
+    <tr>
+      <td>1365</td>
+      <td>kevalramoliya</td>
+      <td>Gim</td>
+      <td>125000</td>
+    </tr>
+    <tr>
+      <td>8765</td>
+      <td>ravivaghamshi</td>
+      <td>android</td>
+      <td>85000</td>
+    </tr>
+    <tr>
+      <td>1365</td>
+      <td>kevalramoliya</td>
+      <td>Gim</td>
+      <td>125000</td>
+    </tr>
+    <tr>
+      <td>5642</td>
+      <td>devpatel</td>
+      <td>photoshop</td>
+      <td>25000</td>
+    </tr>
+  </table>
+
+  <script>
+    function searchTable() {
+      var input = document.getElementById('searchInput');
+      var filter = input.value.toUpperCase();
+      var table = document.getElementById('dataTable');
+      var rows = table.getElementsByTagName('tr');
+
+      for (var i = 1; i < rows.length; i++) { // Start from 1 to skip the table header row
+        var idCell = rows[i].getElementsByTagName('td')[0];
+        if (idCell) {
+          var idText = idCell.textContent || idCell.innerText;
+          if (idText.toUpperCase() === filter) {
+            rows[i].style.display = ''; // Show the row
+          } else {
+            rows[i].style.display = 'none'; // Hide the row
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>

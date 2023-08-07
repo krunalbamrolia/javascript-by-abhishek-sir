@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>Constructor</title>
+</head>
+<body>
+    
+    <!-- ------- tag ---------------- -->
+    <div>
+        <button onclick="con()"> fill your detail </button>
+
+        <p id="d1"></p>
+        <p id="d2"></p>
+        <p id="d3"></p>
+        <p id="d4"></p>
+        <hr>
+        <p id="def"></p>
+    </div>
+
+    <!-- ------------ script ------------ -->
+ <script>       //create a function 
+        function con() {
+        let fullName = prompt("Enter your Full Name : ");
+        let age = parseInt(prompt("Enter your Age : "));
+        let work = prompt("Enter your Work : ");
+        let contect = parseInt(prompt("Enter your Contect : "));
+
+        // create class
+       class demo {
+        constructor(fullName, age, work, contect){
+            this.Name = fullName;
+            this.Age = age;
+            this.Work = work;
+            this.contect = contect;
+         }
+       }
+       let obj =new demo(fullName, age, work, contect);
+        
+       obj.Nationality = "INDIAN";    //default value
+
+document.getElementById("d1").innerHTML = "Enter Your FullName : " + obj.Name;
+document.getElementById("d2").innerHTML = "Enter Your Age : " + obj.Age;
+document.getElementById("d3").innerHTML = "Enter Your Work : " + obj.Work;
+document.getElementById("d4").innerHTML = "Enter your Contect : " + obj.contect;
+
+document.getElementById("def").innerHTML = "This is a default Value : " + obj.Nationality;
+}
+    
+    </script>
+</body>
+</html>

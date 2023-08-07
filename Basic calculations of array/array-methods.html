@@ -1,0 +1,130 @@
+<html>
+<head>
+    <title>Array Methods</title>
+</head>
+<body>
+    <script>
+        // Array Methods
+        document.write("<h1>Array Method</h1><hr><hr>");
+        
+        //title
+        document.write("<h4>1_Length method</h4>");
+        
+        // length() - find array length
+        let cars_nm = ['audi','ram','bmw'];     
+        document.write(cars_nm.length +"<br>"); //perform the operations & Output the result
+        
+        //title
+        document.write("<hr><h4>2_Push method</h4>");
+        
+        // push() - add a new element to the end of the array.
+         let name = ['raj','dip','jay'];   
+         document.write(name.length +"<br>");      
+         name.push('ajay','ved');     // Perform the operations 
+         document.write(name +"<br>");             // Output the result
+         document.write(name.length +"<br>");      // Output the result
+         
+         //title
+         document.write("<hr><h4>3_Pop method</h4>");
+
+         // pop() - add a new element to the end of the array.
+         let car = ['audi','ram','bmw'];   
+
+         document.write(car.length +"<br>");      
+         car.pop();                          // Perform the operations 
+         document.write(car +"<br>");             // Output the result
+         document.write(car.length +"<br>");      // Output the result
+
+         //title
+         document.write("<hr><h4>4_Shift method</h4>");
+         
+         // shift() - remove the first element of the array.
+         let fruit = ['apple','kivi','banana'];
+         document.write(fruit.length +"<br>");
+         fruit.shift();         // Perform the operations
+         document.write(fruit +"<br>");             // Output the result
+         document.write(fruit.length +"<br>");      // Output the result
+         
+         //title
+         document.write("<hr><h4>5_Unshift method</h4>");
+         
+         // unshift() - add a new element to the beginning of the array. 
+         let fruit_nm = ['apple','kivi','banana'];
+         document.write(fruit_nm.length +"<br>");
+         fruit_nm.unshift('Watermelon','mango');         // Perform the operations
+         document.write(fruit_nm +"<br>");             // Output the result
+         document.write(fruit_nm.length +"<br>");      // Output the result
+        
+         //title 
+        document.write("<hr><h4>6_Splice method</h4>");
+         
+         // splice() - add a new element to the beginning of the array.
+         let phone = ['samsung','apple','google','asus','onepluse'];
+         document.write(phone.length +"<br>");
+         phone.splice(1,4);         // Perform the operations
+         document.write(phone +"<br>");             // Output the result
+         document.write(phone.length +"<br>");      // Output the result
+        
+        //title 
+         document.write("<hr><h4>7_Slice method</h4>");
+         
+         //slice() - return a section of an array.
+         let city = ['surat','rajkot','junagadh','baroda'];
+         document.write(city.length +"<br>");
+         let city_slice = city.slice(2);         // Perform the operations
+         document.write(city_slice +"<br>");             // Output the result
+         document.write(city_slice.length +"<br>");      // Output the result
+        
+         //title
+         document.write("<hr><h4>8_Concat method</h4>");
+        
+         //concat() - return a new array consisting of the elements of two or more arrays.
+        let color = ['red','green','blue','white'];
+        let color_nm = ['black','pink','orange','yellow'];
+        document.write(color.length +"<br>");
+        let color_concat = color.concat(color_nm);         // Perform the operations
+        document.write(color_concat +"<br>");             // Output the result
+        document.write(color_concat.length +"<br>");      // Output the result
+        
+        //title
+        document.write("<hr><h4>9_Join method</h4>");
+        
+        //join() - return a new string consisting of the elements of an array.
+        let gadget = ['phone','laptop','tablet'];
+        document.write(gadget.length +"<br>");
+        let gadget_join = gadget.join();         // Perform the operations
+        document.write(gadget_join +"<br>");             // Output the result
+        document.write(gadget_join.length +"<br>");      // Output the result
+
+        //title
+        document.write("<hr><h4>10_tostring method</h4>");
+
+        //tostring() - used to convert an array to a string representation. 
+        let card = ['uno','Solitaire','rummy'];
+        document.write(card.length +"<br>");
+        let card_string = card.toString();         // Perform the operations
+        document.write(card_string +"<br>");             // Output the result
+        document.write(card_string.length +"<br>");      // Output the result
+        
+        //title
+        document.write("<hr><h4>11_flat method</h4>");
+
+        //flat() - return a new array consisting of the elements of an array.
+        let num = [[09,08],[19,99],[23,50]];
+        document.write(num.length +"<br>");
+        let num_flat = num.flat(2);         // Perform the operations
+        document.write(num_flat +"<br>");             // Output the result
+        document.write(num_flat.length +"<br>");      // Output the result
+
+        //title
+        document.write("<hr><h4>12_delete method</h4>");
+
+        //delete() - return a new array consisting of the elements of an array.
+        let country_nm = ['germany','india','usa','uk','canada'];
+        document.write(country_nm.length +"<br>");
+        delete country_nm[2];                   //perform the operations
+        document.write(country_nm +"<br>");             // Output the result
+        
+    </script>
+</body>
+</html>

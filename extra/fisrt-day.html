@@ -1,0 +1,58 @@
+<html>
+<body>
+
+  <p id="change">Click te button to change the layout of the page</p>
+  <button onclick="myFunction()">Click Me!</button>
+  
+  <script>
+    function myFunction(){
+      let x = document.getElementById("change");
+      x.style.fontSize ="30px";
+      x.style.color="red";
+      x.style.alignItems="center";
+      x.style.border="2px solid blue";
+    }
+    </script>
+    <p id="chg">Click te button to change the layout of the page</p>
+    <button onclick="document.getElementById('chg').style.fontSize='30px'">Click Me!</button>
+    
+    
+    <p id="txt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique, numquam repellat! Sint, obcaecati aspernatur cumque ut sunt illo tempora eum aut, quidem quasi, sapiente perspiciatis. Aut consequatur ad facilis reprehenderit.</p>
+    
+    <button type="button" onclick='document.getElementById("txt").innerHTML = "09/08"'>Birth-date</button>
+
+    <button type="button" onclick='document.getElementById("txt").innerHTML = "23 " ' >age </button> 
+    
+    <button type="button" onclick='document.getElementById("txt").innerHTML = "krunal bamroliya "'>name</button>
+    <p>calc useing js</p>
+    <p id="less"></p>
+    <p id="demo"></p>
+    <p id="div"></p>
+
+</body>
+<script>
+  let x, y, z;  // Statement 1
+  x = 5;        // Statement 2
+  y = 6;        // Statement 3
+  z = x + y;    // Statement 4
+  
+  document.getElementById("demo").innerHTML =
+  "The value of z is " + z + ".";  
+
+
+  let a, b, c, s;
+  a = 10;
+  b = 11;
+  c = a-b;
+
+  s= a*b;
+
+  document.getElementById("less").innerHTML = "the value of c is "+ c +".";
+  document.getElementById("div").innerHTML = "the value of s is "+ s +".";
+  </script>
+  
+</html>
+
+
+
+

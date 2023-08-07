@@ -1,0 +1,77 @@
+<html>
+<head>
+    <title>clock</title>
+</head>
+<body>
+
+<style>
+    #clock,
+    #clock-1{
+    font-size: 150px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 50px;
+    margin: 70px;
+
+    }
+</style>
+
+
+    <div id="clock">00:00:00</div>
+    <script>
+        // var d = new Date();
+        // var n = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds(); 
+        // document.getElementById("clock").innerHTML = n;    
+       
+        setInterval(function(){
+           
+            var d = new Date();
+            var n = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+           
+            document.getElementById("clock").innerHTML = n;
+            },1000);
+           
+    </script>
+           
+           
+           
+           
+<!------------------------------- second clock ------------------------------------------>
+
+
+<div id="clock-1">00:00:00</div>
+<script>
+    var sc = ()=>{
+
+        let date = new Date();
+        let three = date.toLocaleString();      
+        
+        document.getElementById('clock-1').innerHTML = date;
+    }
+    setInterval(sc,1000);
+    </script>        
+
+<!------------------------------- third clock(german) ------------------------------------------>
+
+<script>
+// Create a Date object with the current time
+var currentDate = new Date();
+
+// Set the options for formatting the time
+var options = {
+  hour: 'numeric',
+  minute: 'numeric',
+  second: 'numeric',
+  timeZone: 'Europe/Berlin' // Set the desired time zone (CET)
+};
+
+// Get the formatted time string
+var germanTime = currentDate.toLocaleTimeString('de-DE', options);
+
+// Output the German time
+document.write(germanTime);
+
+</script>
+
+</body>
+</html> 

@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>calculator</title>
+</head>
+<body>
+    <script>
+        // Get the input values
+        var num1 = parseInt(prompt("Enter First Number :"));
+        var num2 = parseInt(prompt("Enter Secound Number :"));
+        var choice = prompt("You choice mathematics symbols(+, -, *, /) :");
+
+        // Perform the operations & Calculate the result
+        if (choice == "+") {
+            document.write("<h2>Addition is :", (num1 + num2) + "</h2>");
+        }
+        else if (choice == "-") {
+            document.write("<h2>Substraction is :" + (num1 - num2) + "</h2>");
+        }
+        else if (choice == "*") {
+            document.write("<h2>Multiplication is :", (num1 * num2) + "</h2>");
+        }
+        else if (choice == "/") {
+            document.write("<h2>Division is :", (num1 / num2) + "</h2>");
+        }
+        else {
+            document.write("<h2>Invalid Choice</h2>");
+        }
+    </script>
+</body>
+</html>

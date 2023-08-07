@@ -1,0 +1,116 @@
+<html>
+<head>
+    <title>Array Iteration</title>
+</head>
+<body>
+    <script>
+        // Array Methods
+        document.write("<h1>Array Iteration</h1><hr><hr>");
+               
+            //title
+            document.write("<h4>1_forEach</h4>");
+        
+            //forEach() - iterates over the elements of an array
+            let cars = ['audi','ram','bmw'];
+            cars.forEach(function(car) {        //perform the operations & Output the result.
+                document.write(car + "<br>");
+                });
+        
+            //title
+            document.write("<hr><h4>2_map</h4>");
+            //map() - iterates over the elements of an array and returns a new array
+        
+            let name = ['raj','dip','jay'];
+            let nm = name.map(function(nm2) {       //perform the operations & Output the result.
+                return nm2.toUpperCase();
+                });
+                document.write(nm);
+            
+            //title
+            document.write("<hr><h4>3_filter</h4>");
+            
+            //filter() - iterates over the elements of an array and returns a new array.
+            let car = ['audi','ram','bmw','lamborghini'];  
+            let car1 = car.filter(function(car2) {    //perform the operations & Output the result.
+                return car2.length > 3;
+                });
+                document.write(car1);
+                
+            //title
+            document.write("<hr><h4>4_reduce</h4>");
+        
+            //reduce() - iterates over the elements of an array and returns a new value.
+            let fruits = ["apple",'kivi', "banana", "orange"];
+            let fruits2 = fruits.reduce(function(total, fruit) {  //perform the operations & Output the result.
+                return total + fruit.length;
+                }, 0);
+                document.write(fruits2);
+        
+            //title
+            document.write("<hr><h4>5_every</h4>");
+        
+            //every() - iterates over the elements of an array and returns a boolean.
+            let phone = ['samsung','apple','google','asus','onepluse'];
+            let phones = phone.every(function(phone2) {    //perform the operations & Output the result.
+                 return phone2.length > 5;
+                });
+                document.write(phones);
+        
+            //title
+            document.write("<hr><h4>6_some</h4>");
+            
+            //some() - iterates over the elements of an array and returns a boolean.
+            let city = ['surat','rajkot','junagadh','baroda'];
+            let citys = city.some(function(city2) {         //perform the operations & Output the result.
+                return city2.length > 4;
+                });
+                document.write(citys);
+                          
+            //title
+            document.write("<hr><h4>7_find</h4>");
+            
+            //find() - iterates over the elements of an array and returns the first element that satisfies the condition.
+            let color = ['red','green','blue','white'];
+            let colors = color.find(function(color2) {      //perform the operations & Output the result.
+                return color2.length > 3;
+                });
+                document.write(colors);
+                                
+            //title
+            document.write("<hr><h4>8_findIndex</h4>");
+        
+            //findIndex() - iterates over the elements of an array and returns the index of the first element that satisfies the condition
+            let gadget = ['phone','laptop','tablet'];
+            let gadgets = gadget.findIndex(function(gadget2) {     //perform the operations & Output the result.
+                return gadget2.length > 2;
+                });
+                document.write(gadgets);
+               
+                //title
+                document.write("<hr><h4>9_includes</h4>");
+                
+                //includes() - iterates over the elements of an array and returns a boolean.
+                let card = ['uno','Solitaire','rummy','uno'];
+                let cards = card.includes("unos");     //perform the operations & Output the result.
+                document.write(cards);
+                
+                //title
+                document.write("<hr><h4>10_indexOf</h4>");
+        
+                //indexOf() - iterates over the elements of an array and returns the index of the first element that satisfies the condition.
+                let country = ['germany','india','usa','uk','canada'];
+                let countrys = country.indexOf("india");      //perform the operations & Output the result.
+                document.write(countrys);
+                
+        
+                //title
+                document.write("<hr><h4>11_lastIndexOf</h4>");
+        
+                //lastIndexOf() - iterates over the elements of an array and returns the index of the last element that satisfies the condition
+                let game = ['cricket','football','badminton'];
+                let games = game.lastIndexOf("badminton");       //perform the operations & Output the result.
+                document.write(games);
+            
+        </script>    
+</body>
+</html>

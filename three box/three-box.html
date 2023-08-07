@@ -1,0 +1,118 @@
+<html>
+
+<head>
+  <title>3 box-1</title>
+</head>
+
+<body>
+  <style>
+    .view {
+      padding: 50px 50px;
+    }
+
+    .box-1 {
+      width: 100px;
+      height: 100px;
+      background-color: skyblue;
+      transition: all 3s;
+      /* Add transitions for smooth animation */
+    }
+
+    /* ------- 3 --------- */
+    .myBox {
+
+            width: 400px;
+            height: 200px;
+            background-color: rgb(164 173 167 / 50%);
+            object-fit:fill;
+        }
+  </style>
+
+  <div class="view">
+    <div id="box1" class="box-1"></div><br>
+    <div id="box2" class="box-1"></div><br>
+    <div id="box3" onmouseover="changeImage()" class="myBox">
+      <img id="imageBox" src="img/smiling-children-playing-outdoors-sunset-generated-by-ai.jpg" height="200px" width="400px" />
+      
+    </div>
+    <button onclick="clickplz()">click</button>
+  </div>
+
+  <script>
+    // first box
+    var box1 = document.getElementById('box1');
+
+    box1.addEventListener('mouseover', function () {
+      // Increase the box1 size on mouseover
+      box1.style.width = '150px';
+      box1.style.height = '150px';
+      box1.style.rotate = '45deg';
+    });
+
+    box1.addEventListener('mouseout', function () {
+      // Reset the box1 size on mouseout
+      box1.style.width = '100px';
+      box1.style.height = '100px';
+      box1.style.rotate = '0deg';
+    });
+
+
+    //second box
+    var box2 = document.getElementById('box2');
+
+    box2.addEventListener('mouseover', function () {
+      // Generate a random color
+      var randomColor = getRandomColor();
+
+      // Change the box color on mouseover
+      box2.style.backgroundColor = randomColor;
+    });
+
+    function getRandomColor() {
+      // Generate random RGB values
+      var r = Math.floor(Math.random() * 256);
+      var g = Math.floor(Math.random() * 256);
+      var b = Math.floor(Math.random() * 256);
+
+      // Construct the color in hexadecimal format
+      var color = '#' + r.toString(16) + g.toString(16) + b.toString(16);
+      return color;
+    }
+
+    //third box -------------------------------
+
+    // Box No. 3 Images and Text cheng code 
+
+        // This code is Image Array 
+
+        imageBox = [
+        "img/boy.jpg",
+        "img/caucasian-farmer-holding-pumpkin-smiling-autumn-generated-by-ai.jpg",
+        "img/fashion-little-boy.jpg",
+        "img/cute-toddler-exploring-world-map-with-joy-generated-by-ai.jpg",
+        "img/cute-chef-boy-smiles-while-cooking-healthy-meal-generated-by-ai.jpg",
+        "img/children-s-fantasy-tale-with-clouds.jpg",
+        "img/smiling-group-people-celebrate-traditional-festival-outdoors-generated-by-ai.jpg",
+        "img/two-cute-girls-playing-sand-generated-by-ai.jpg",
+        ];
+        var currentIndex = 0;
+
+        // Box No. 3 function codision added
+
+        function changeImage() {
+
+            var img = document.getElementById("imageBox");
+            img.src = imageBox[currentIndex];
+            currentIndex = (currentIndex + 1) % imageBox.length;
+        }
+
+
+        function clickplz(){
+          getRandomColor();
+          changeImage();
+        }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+<html>
+<body>
+
+  <!--string methods -->
+<h1>JavaScript Strings</h1>
+<h2>The length Property</h2>
+
+<!-- length -->
+<h3><b>1_The length of the string is:</b></h3>
+<p id="length"></p>
+
+<!-- slice -->
+<h3><b>2_The slice of the string is:(show only staring-ending string )</b></h3>
+<p id="slice"></p>
+
+<!-- slice(-) -->
+<h3><b>3_The slice- of the string is:(- staring point end side)</b></h3>
+<p id="slice-"></p>
+
+<!-- substring -->
+<h3><b>4_The substring of the string is:(write useing str)</b></h3>
+<p id="substring"></p>
+
+<!-- substr -->
+<h3><b>5_The substr of the string is:(same as a substring)</b></h3>
+<p id="substr"></p>
+
+<!-- replace -->
+<h3><b>6_The substr of the string is:(if u can use /../i)</b></h3>
+<button onclick="myFunction()">Try it</button>
+<p id="replace">krunal bamrolia!</p>
+
+<!-- replaceAll -->
+<h3><b>7_The replaceAll of the string is:(replace whole paragraph)</b></h3>
+<p id="replaceAll"></p>
+
+<!-- touppercase -->
+<h3><b>8_The toUpperCase of the string is:(all text capital)</b></h3>
+<p id="toUpperCase"></p>
+
+<!-- tolowercase -->
+<h3><b>9_The toLowerCase of the string is:(all text small)</b></h3>
+<p id="toLowerCase"></p>
+
+<!-- concat -->
+<h3><b>10_The concat of the string is:(if you make a space use this sign " ",)</b></h3>
+<p id="concat"></p>
+
+<!-- trim -->
+<h3><b>11_The trim of the string is:</b></h3>
+<p id="trim"></p>
+
+<!-- trimStart -->
+<h3><b>12_The trimStart of the string is:</b></h3>
+<p id="trimStart"></p>
+
+<!-- trimEnd -->
+<h3><b>13_The trimEnd of the string is:</b></h3>
+<p id="trimEnd"></p>
+
+<!-- padStart -->
+<h3><b>14_The padStart of the string is:</b></h3>
+<p id="padStart"></p>
+
+<!-- padEnd -->
+<h3><b>15_The padEnd of the string is:</b></h3>
+<p id="padEnd"></p>
+
+
+<h3><b>16_The charcodeAt of the string is:</b></h3>
+<p id="charAt"></p>
+
+
+<h3><b>17_The charcodeAt of the string is:</b></h3>
+<p id="charCodeAt"></p>
+
+
+<h3><b>18_The split of the string is:</b></h3>
+<p id="split"></p>
+
+<script>
+// all string method
+
+// length
+var text = "KRUNALBAMROLIA";
+document.getElementById("length").innerHTML = text.length;
+
+// slice
+var text = "KRUNALBAMROLIA krunalbamrolia";
+var part = text.slice(3,20);
+document.getElementById("slice").innerHTML = part;
+
+//slice(-)
+var text = "KRUNALBAMROLIA krunalbamrolia";
+var part = text.slice(3,-1);
+document.getElementById("slice-").innerHTML = part;
+
+//substring
+var str = "KRUNALBAMROLIA krunalbamrolia";
+document.getElementById("substring").innerHTML = str.substring(3,20);
+
+// substr
+var str = "KRUNALBAMROLIA krunalbamrolia";
+document.getElementById("substr").innerHTML = text.substr(3,20);
+
+// replace
+function myFunction() {
+  var text = document.getElementById("replace").innerHTML;
+  document.getElementById("replace").innerHTML =
+  text.replace("bamrolia","patel");
+	}
+
+
+//replaceAll
+var text = "I love cats. Cats are very easy to love. Cats are very popular."
+text = text.replaceAll("Cats","Dogs");
+text = text.replaceAll("cats","dogs");
+document.getElementById("replaceAll").innerHTML = text;
+
+//touppercase
+var text = "KRUNALBAMROLIA krunalbamrolia";
+document.getElementById("toUpperCase").innerHTML = text.toUpperCase();
+
+//tolowercase
+var text = "KRUNALBAMROLIA krunalbamrolia";
+document.getElementById("toLowerCase").innerHTML = text.toLowerCase();
+
+//concat
+var text1 = "krunal";
+var text2 = "bamrolia";
+var text3 = text1.concat(text2);
+document.getElementById("concat").innerHTML = text3;
+
+// trim
+var text1 = "   krunalbamroliya krunalbamrolia   ";
+var text2 = text1.trim();
+document.getElementById("trim").innerHTML =
+"Length text1 = " + text1.length + "<br>Length text2 = " + text2.length;
+
+// trimStart
+var text1 = "    krunal  bamroliya  krunalbamrolia  ";
+var text2 = text1.trimStart();
+document.getElementById("trimStart").innerHTML =
+"Length text1 = " + text1.length + "<br>Length text2 = " + text2.length;
+
+// trimEnd
+var text1 = "    krunal  bamroliya  krunalbamrolia  ";
+var text2 = text1.trimEnd();
+document.getElementById("trimEnd").innerHTML =
+"Length text1 = " + text1.length + "<br>Length text2 = " + text2.length;
+
+// padStart
+var text = "krunalbamrolia";
+text = text.padStart(20,"99");
+document.getElementById("padStart").innerHTML = text;
+
+// padEnd
+var text = "krunalbamrolia";
+text = text.padEnd(20,"99");
+document.getElementById("padEnd").innerHTML = text;
+
+//charAt
+var text = "KRUNALBAMROLIA krunalbamrolia";
+document.getElementById("charAt").innerHTML = text.charAt(6);
+
+// charCodeAt
+var text = "K";
+document.getElementById("charCodeAt").innerHTML = text.charCodeAt();
+
+//split
+var text = "k,r,u,n,a,l,b,a,m,r,o,l,i,a";
+const myArray = text.split(",");
+document.getElementById("split").innerHTML = myArray[5];
+
+</script>
+
+</body>
+</html>
+
